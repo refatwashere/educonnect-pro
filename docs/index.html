@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduConnect Pro - Open Source Education Management</title>
+    <meta name="description" content="Free, open-source educational institution management platform built with FastAPI and Next.js">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎓</text></svg>">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#eff6ff',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            900: '#1e3a8a'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-300">
+    <!-- Navigation -->
+    <nav class="bg-white dark:bg-gray-800 shadow-sm border-b border-gray-200 dark:border-gray-700 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-3">
+                    <span class="text-2xl">🎓</span>
+                    <span class="text-xl font-bold text-primary-600 dark:text-primary-400">EduConnect Pro</span>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="#features" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400">Features</a>
+                    <a href="#docs" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400">Docs</a>
+                    <a href="https://github.com/refatwashere/educonnect-pro" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400">GitHub</a>
+                    <button id="theme-toggle" class="p-2 rounded-lg bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600">
+                        <svg id="sun-icon" class="w-5 h-5 hidden dark:block" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"></path>
+                        </svg>
+                        <svg id="moon-icon" class="w-5 h-5 block dark:hidden" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-br from-primary-50 to-blue-100 dark:from-gray-800 dark:to-gray-900 py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-5xl font-bold text-gray-900 dark:text-white mb-6">
+                Open Source Education Management
+            </h1>
+            <p class="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto">
+                Free, modern platform for managing educational institutions. Built with FastAPI, Next.js, and PostgreSQL.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#quick-start" class="bg-primary-600 text-white px-8 py-3 rounded-lg hover:bg-primary-700 font-semibold">
+                    Get Started
+                </a>
+                <a href="https://github.com/refatwashere/educonnect-pro" class="border border-primary-600 text-primary-600 dark:text-primary-400 px-8 py-3 rounded-lg hover:bg-primary-50 dark:hover:bg-gray-800 font-semibold">
+                    View on GitHub
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 bg-white dark:bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-12">Features</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="p-6 border border-gray-200 dark:border-gray-700 rounded-lg">
+                    <div class="text-3xl mb-4">🏫</div>
+                    <h3 class="text-xl font-semibold mb-2">Class Management</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Full CRUD operations for managing classes with real-time updates</p>
+                </div>
+                <div class="p-6 border border-gray-200 dark:border-gray-700 rounded-lg">
+                    <div class="text-3xl mb-4">🔒</div>
+                    <h3 class="text-xl font-semibold mb-2">Secure Authentication</h3>
+                    <p class="text-gray-600 dark:text-gray-300">JWT-based authentication with bcrypt password hashing</p>
+                </div>
+                <div class="p-6 border border-gray-200 dark:border-gray-700 rounded-lg">
+                    <div class="text-3xl mb-4">🗄️</div>
+                    <h3 class="text-xl font-semibold mb-2">Database Integration</h3>
+                    <p class="text-gray-600 dark:text-gray-300">PostgreSQL via Supabase with SQLite fallback</p>
+                </div>
+                <div class="p-6 border border-gray-200 dark:border-gray-700 rounded-lg">
+                    <div class="text-3xl mb-4">🧪</div>
+                    <h3 class="text-xl font-semibold mb-2">Comprehensive Tests</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Full test coverage with pytest and automated testing</p>
+                </div>
+                <div class="p-6 border border-gray-200 dark:border-gray-700 rounded-lg">
+                    <div class="text-3xl mb-4">📱</div>
+                    <h3 class="text-xl font-semibold mb-2">Responsive Design</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Mobile-friendly interface built with Tailwind CSS</p>
+                </div>
+                <div class="p-6 border border-gray-200 dark:border-gray-700 rounded-lg">
+                    <div class="text-3xl mb-4">🚀</div>
+                    <h3 class="text-xl font-semibold mb-2">Production Ready</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Docker support, CI/CD ready, comprehensive documentation</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Start Section -->
+    <section id="quick-start" class="py-20 bg-gray-50 dark:bg-gray-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-12">Quick Start</h2>
+            <div class="bg-white dark:bg-gray-900 rounded-lg p-8 shadow-lg">
+                <div class="space-y-6">
+                    <div>
+                        <h3 class="text-lg font-semibold mb-2">1. Clone the Repository</h3>
+                        <div class="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg font-mono text-sm">
+                            git clone https://github.com/refatwashere/educonnect-pro.git<br>
+                            cd educonnect-pro
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold mb-2">2. Start Development Servers</h3>
+                        <div class="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg font-mono text-sm">
+                            # Windows<br>
+                            scripts\start-dev.bat<br><br>
+                            # Linux/Mac<br>
+                            scripts/start-dev.sh
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold mb-2">3. Access the Application</h3>
+                        <div class="grid md:grid-cols-3 gap-4 text-sm">
+                            <div class="p-3 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
+                                <strong>Frontend:</strong><br>
+                                <a href="http://localhost:3000" class="text-primary-600 dark:text-primary-400">localhost:3000</a>
+                            </div>
+                            <div class="p-3 bg-green-50 dark:bg-green-900/20 rounded-lg">
+                                <strong>Backend API:</strong><br>
+                                <a href="http://localhost:8000" class="text-primary-600 dark:text-primary-400">localhost:8000</a>
+                            </div>
+                            <div class="p-3 bg-purple-50 dark:bg-purple-900/20 rounded-lg">
+                                <strong>API Docs:</strong><br>
+                                <a href="http://localhost:8000/docs" class="text-primary-600 dark:text-primary-400">localhost:8000/docs</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-yellow-50 dark:bg-yellow-900/20 p-4 rounded-lg">
+                        <strong>Default Login:</strong><br>
+                        Username: <code class="bg-yellow-100 dark:bg-yellow-800 px-2 py-1 rounded">teacher@school.edu</code><br>
+                        Password: <code class="bg-yellow-100 dark:bg-yellow-800 px-2 py-1 rounded">password</code>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Documentation Section -->
+    <section id="docs" class="py-20 bg-white dark:bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-12">Documentation</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <a href="getting-started.html" class="block p-6 border border-gray-200 dark:border-gray-700 rounded-lg hover:shadow-lg transition-shadow">
+                    <h3 class="text-xl font-semibold mb-2 text-primary-600 dark:text-primary-400">Getting Started</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Setup and installation guide</p>
+                </a>
+                <a href="database-setup.html" class="block p-6 border border-gray-200 dark:border-gray-700 rounded-lg hover:shadow-lg transition-shadow">
+                    <h3 class="text-xl font-semibold mb-2 text-primary-600 dark:text-primary-400">Database Setup</h3>
+                    <p class="text-gray-600 dark:text-gray-300">SQLite and Supabase configuration</p>
+                </a>
+                <a href="api-guide.html" class="block p-6 border border-gray-200 dark:border-gray-700 rounded-lg hover:shadow-lg transition-shadow">
+                    <h3 class="text-xl font-semibold mb-2 text-primary-600 dark:text-primary-400">API Guide</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Backend API reference</p>
+                </a>
+                <a href="frontend-guide.html" class="block p-6 border border-gray-200 dark:border-gray-700 rounded-lg hover:shadow-lg transition-shadow">
+                    <h3 class="text-xl font-semibold mb-2 text-primary-600 dark:text-primary-400">Frontend Guide</h3>
+                    <p class="text-gray-600 dark:text-gray-300">UI development with Next.js</p>
+                </a>
+                <a href="testing-guide.html" class="block p-6 border border-gray-200 dark:border-gray-700 rounded-lg hover:shadow-lg transition-shadow">
+                    <h3 class="text-xl font-semibold mb-2 text-primary-600 dark:text-primary-400">Testing Guide</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Testing setup and examples</p>
+                </a>
+                <a href="next-steps.html" class="block p-6 border border-gray-200 dark:border-gray-700 rounded-lg hover:shadow-lg transition-shadow">
+                    <h3 class="text-xl font-semibold mb-2 text-primary-600 dark:text-primary-400">Next Steps</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Development roadmap</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack Section -->
+    <section class="py-20 bg-gray-50 dark:bg-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-12">Technology Stack</h2>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Backend</h3>
+                    <ul class="space-y-2 text-gray-600 dark:text-gray-300">
+                        <li>• <strong>FastAPI</strong> - Modern Python web framework</li>
+                        <li>• <strong>SQLAlchemy</strong> - Database ORM</li>
+                        <li>• <strong>PostgreSQL</strong> - Production database</li>
+                        <li>• <strong>JWT</strong> - Authentication</li>
+                        <li>• <strong>Pydantic</strong> - Data validation</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Frontend</h3>
+                    <ul class="space-y-2 text-gray-600 dark:text-gray-300">
+                        <li>• <strong>Next.js 14</strong> - React framework</li>
+                        <li>• <strong>TypeScript</strong> - Type safety</li>
+                        <li>• <strong>Tailwind CSS</strong> - Styling</li>
+                        <li>• <strong>Shared Types</strong> - Frontend-backend sync</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center space-x-3 mb-4 md:mb-0">
+                    <span class="text-2xl">🎓</span>
+                    <span class="text-xl font-bold text-primary-600 dark:text-primary-400">EduConnect Pro</span>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="https://github.com/refatwashere/educonnect-pro" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400">GitHub</a>
+                    <a href="https://github.com/refatwashere/educonnect-pro/issues" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400">Issues</a>
+                    <a href="https://github.com/refatwashere/educonnect-pro/discussions" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400">Discussions</a>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-gray-200 dark:border-gray-700 text-center text-gray-600 dark:text-gray-300">
+                <p>&copy; 2024 EduConnect Pro. Open source under MIT License.</p>
+                <p class="mt-2">Making education management accessible to everyone.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Dark mode toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+        
+        // Check for saved theme preference or default to light mode
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        if (currentTheme === 'dark') {
+            html.classList.add('dark');
+        }
+        
+        themeToggle.addEventListener('click', () => {
+            html.classList.toggle('dark');
+            const theme = html.classList.contains('dark') ? 'dark' : 'light';
+            localStorage.setItem('theme', theme);
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

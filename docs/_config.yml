@@ -1,0 +1,19 @@
+title: EduConnect Pro
+description: Open Source Education Management Platform
+url: "https://your-username.github.io"
+baseurl: "/educonnect-pro"
+
+# GitHub Pages settings
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+
+# Exclude files from processing
+exclude:
+  - README.md
+  - node_modules/
+  - vendor/
+
+# Include files
+include:
+  - _pages
